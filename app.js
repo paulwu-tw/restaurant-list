@@ -17,8 +17,8 @@ app.get('/', (req, res) => {
 })
 
 app.get('/restaurants/:id', (req, res) => {
-    const id = Number(req.params.id)
-    const restaurant = restaurants.find(restaurant => restaurant.id === id)
+    const id = req.params.id
+    const restaurant = restaurants.find(restaurant => restaurant.id.toString() === id)
     res.render('show', { restaurant })
 })
 
